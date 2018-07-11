@@ -1,0 +1,28 @@
+﻿@model HW707.Models.ViewModels.CashFlowModel
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-bordered table-hover">
+            <tr>
+                <th>#</th>
+                <th>類別</th>
+                <th>日期</th>
+                <th>金額</th>
+            </tr>
+            @{int i = 1;
+            }
+
+            @foreach (var item in ViewData["moneyFlowList"] as List<HW707.Models.ViewModels.CashFlowModel>)
+            {
+                <tr>
+                    <td>@i</td>
+                    <td>@item.flowType</td>
+                    <td>@item.flowDate</td>
+                    <td>@item.flowAmount</td>
+                </tr>
+                i++;
+            }
+        </table>
+    </div>
+</div>
+
