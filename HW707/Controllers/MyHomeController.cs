@@ -22,8 +22,6 @@ namespace HW707.Controllers
             #region 做虛擬資料
 
             string theType = null;
-            string theDate = null;
-            int theAmount = 0;
 
             List<CashFlowViewModel> list = new List<CashFlowViewModel>();
 
@@ -36,15 +34,11 @@ namespace HW707.Controllers
                 else
                     theType = "支出";
 
-                theDate = "2018" + "-" + (ran.Next(1, 12)).ToString() + "-" + (ran.Next(1, 28)).ToString();
-
-                theAmount = ran.Next(100, 5000);
-
                 CashFlowViewModel obj = new CashFlowViewModel
                 {
                     FlowType = theType,
-                    FlowDate = theDate,
-                    FlowAmount = theAmount.ToString()
+                    FlowDate = DateTime.Now.AddDays(ran.Next(1,365)),
+                    FlowAmount = ran.Next(100, 5000)
                 };
 
                 list.Add(obj);
