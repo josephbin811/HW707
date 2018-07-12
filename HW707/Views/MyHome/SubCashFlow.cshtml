@@ -17,8 +17,8 @@
                 <tr>
                     <td>@i</td>
                     <td>@item.FlowType</td>
-                    <td>@item.FlowDate</td>
-                    <td>@item.FlowAmount</td>
+                    <td>@item.FlowDate.ToString("yyyy-MM-dd")</td>
+                    <td>@item.FlowAmount.ToString("N0")</td>
                 </tr>
                 i++;
             }
