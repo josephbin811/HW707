@@ -25,7 +25,7 @@ namespace HW707.Controllers
             string theDate = null;
             int theAmount = 0;
 
-            List<CashFlowModel> list = new List<CashFlowModel>();
+            List<CashFlowViewModel> list = new List<CashFlowViewModel>();
 
             for (int i = 0; i < 50; i++)
             {
@@ -40,11 +40,11 @@ namespace HW707.Controllers
 
                 theAmount = ran.Next(100, 5000);
 
-                CashFlowModel obj = new CashFlowModel
+                CashFlowViewModel obj = new CashFlowViewModel
                 {
-                    flowType = theType,
-                    flowDate = theDate,
-                    flowAmount = theAmount.ToString()
+                    FlowType = theType,
+                    FlowDate = theDate,
+                    FlowAmount = theAmount.ToString()
                 };
 
                 list.Add(obj);
