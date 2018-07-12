@@ -1,4 +1,4 @@
-﻿@model HW707.Models.ViewModels.CashFlowViewModel
+﻿@model IEnumerable<HW707.Models.ViewModels.CashFlowViewModel>
 
 <div class="row">
     <div class="col-md-12">
@@ -12,7 +12,7 @@
             @{int i = 1;
             }
 
-            @foreach (var item in ViewData["moneyFlowList"] as List<HW707.Models.ViewModels.CashFlowViewModel>)
+            @foreach (var item in Model)
             {
                 <tr>
                     <td>@i</td>

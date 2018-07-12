@@ -44,10 +44,9 @@ namespace HW707.Controllers
                 list.Add(obj);
             }
 
-            ViewData["moneyFlowList"] = list;
             #endregion
 
-            return View();
+            return View(list);
         }
     }
 }
