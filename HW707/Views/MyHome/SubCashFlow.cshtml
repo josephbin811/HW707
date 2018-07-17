@@ -1,4 +1,4 @@
-﻿@model HW707.Models.ViewModels.CashFlowModel
+﻿@model IEnumerable<HW707.Models.ViewModels.CashFlowViewModel>
 
 <div class="row">
     <div class="col-md-12">
@@ -12,13 +12,13 @@
             @{int i = 1;
             }
 
-            @foreach (var item in ViewData["moneyFlowList"] as List<HW707.Models.ViewModels.CashFlowModel>)
+            @foreach (var item in Model)
             {
                 <tr>
                     <td>@i</td>
-                    <td>@item.flowType</td>
-                    <td>@item.flowDate</td>
-                    <td>@item.flowAmount</td>
+                    <td>@item.FlowType</td>
+                    <td>@item.FlowDate.ToString("yyyy-MM-dd")</td>
+                    <td>@item.FlowAmount.ToString("N0")</td>
                 </tr>
                 i++;
             }

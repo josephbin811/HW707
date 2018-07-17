@@ -22,10 +22,8 @@ namespace HW707.Controllers
             #region 做虛擬資料
 
             string theType = null;
-            string theDate = null;
-            int theAmount = 0;
 
-            List<CashFlowModel> list = new List<CashFlowModel>();
+            List<CashFlowViewModel> list = new List<CashFlowViewModel>();
 
             for (int i = 0; i < 50; i++)
             {
@@ -36,24 +34,19 @@ namespace HW707.Controllers
                 else
                     theType = "支出";
 
-                theDate = "2018" + "-" + (ran.Next(1, 12)).ToString() + "-" + (ran.Next(1, 28)).ToString();
-
-                theAmount = ran.Next(100, 5000);
-
-                CashFlowModel obj = new CashFlowModel
+                CashFlowViewModel obj = new CashFlowViewModel
                 {
-                    flowType = theType,
-                    flowDate = theDate,
-                    flowAmount = theAmount.ToString()
+                    FlowType = theType,
+                    FlowDate = DateTime.Now.AddDays(ran.Next(1,365)),
+                    FlowAmount = ran.Next(100, 5000)
                 };
 
                 list.Add(obj);
             }
 
-            ViewData["moneyFlowList"] = list;
             #endregion
 
-            return View();
+            return View(list);
         }
     }
 }
